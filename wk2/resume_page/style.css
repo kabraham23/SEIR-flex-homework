@@ -1,0 +1,43 @@
+body {
+    background: #a88f32;
+    color: #2e2d2a; 
+    max-width: 900px;
+    margin: auto;
+}
+h1 {
+    text-align: center;
+    font-family: 'Indie Flower', cursive;
+}
+h3 {
+    color: #dbdad7;
+    text-decoration: underline;
+}
+a {
+    color:#bf7454;
+    background-color: #2e2d2a;
+}
+.grumpypic {
+    width: 30vw;
+    max-width: 900px;
+}
+.alignment {
+    text-align: center;
+    display: inline-block;
+}
+.experience {
+list-style-position: inside;
+padding: 30px;
+}
+.items {
+    text-align: left;
+    padding: 30px;
+}
+.work {
+    display: inline-block;
+    padding: 50px;
+}
+.first, .second, .third {
+    padding: 20px;
+    display: inline-block;
+    margin: auto;
+}

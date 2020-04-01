@@ -1,0 +1,35 @@
+body {
+    background: white;
+}
+nav {
+    align-items: inline-block;
+}
+h1 {
+    text-align: left;
+}
+
+h2 {
+    
+    color: white;
+    font-size: 56px;
+}
+.nav {
+    float: right;
+    padding: 5px;
+}
+.peace {
+    background-color: blue;
+    padding: 30px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+.quote {
+    font-size: 30px;
+    color: white;
+}
+.quotebutton {
+    text-emphasis: none;
+    color: blue;
+    background: white;
+    padding: 10px;
+}
