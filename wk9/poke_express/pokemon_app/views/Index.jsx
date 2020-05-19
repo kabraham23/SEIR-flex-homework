@@ -5,9 +5,11 @@ const myStyle = {
     backgroundColor: '#000000',
   };
  
-  class MyFirstComponent extends React.Component() {
-    return (
+  class MyFirstComponent extends React.Component {
+    render(){
+      return (
       <div>{ 'My First React Component! '}</div>
-    )
-    };
-  
+    )}
+  };
+
+  module.exports = MyFirstComponent;

@@ -11,7 +11,7 @@ app.set('view engine', 'jsx');
 app.engine('jsx', require('express-react-views').createEngine());
 
 //index route
-app.getMaxListeners('/pokemon', (req, res) => {
+app.get('/pokemon', (req, res) => {
     res.render('Index.jsx');
 })
 
