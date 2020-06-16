@@ -1,4 +1,5 @@
 const BookmarkItem = (props) => {
+    <div>
     return (
         <li>
             {props.bookmark.title}
@@ -7,6 +8,7 @@ const BookmarkItem = (props) => {
             {props.bookmark.url}
         </li>
     )
+    </div>
 }
 
 class App extends React.Component {
@@ -32,7 +34,7 @@ class App extends React.Component {
     handleSubmit = (event) => {
         event.preventDefault();
         fetch('/bookmarks', {
-            body: JSON.stringify({ })////////////////////
+            body: JSON.stringify({ })
         })
     }
 
@@ -42,8 +44,14 @@ class App extends React.Component {
             <div>
                 <h1>My Favorite Websites</h1>
                 <button onClick={this.getData}>Get Bookmarks</button>
-                <form onSubmit={this.handleSubmit}></form>
-                <label htmlFor="title">Title</label>
+                <form onSubmit={this.handleSubmit}>
+                    <label htmlFor="title">Title</label>
+                    <input type="text" value={this.state.title} id="title" onChange={this.handleChange}  />
+                    <input type="url" value={this.state.url} id="url" onChange={this.handleChange} />
+                    <input type="submit" />
+                </form>
+                
+                
 
             </div>
         )

@@ -1,25 +1,38 @@
-// environment
+//=======================
+// DEPENDENCIES
+//=======================
+const express = require('express');
+const mongoose = require('mongoose');
+
+
+//=======================
+// VARIABLES
+//=======================
 const app = express();
-const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/bookmarks';
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/oxygen';
 const PORT = process.env.PORT || 3000;
 
-// middleware
-app.use(express.urlencoded({ extended: false }))
-app.use(express.json()); 
-app.use(express.static('public')) 
+//=======================
+// MIDDLEWARE
+//=======================
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+app.use(express.static('public'));
 
-// connect to mongo
-mongoose.connect(mongoURI, { useNewUrlParser: true }, () => {
-    console.log("MongoDB connection made!", mongoURI)
-});
-
-// db messaging
-mongoose.connection.on('error', err => console.log(err.message));
+//=======================
+// MONGODB CONNECTION
+//=======================
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true })
+mongoose.connection.on('error', (error) => console.log(error.message));
 mongoose.connection.on('disconnected', () => console.log('mongo disconnected'));
+mongoose.connection.on('open', ()=>{});
 
-// Routers
-const todosController = require('./controllers/bookmarks.js');
-app.use('/bookmarks', todosController);
+//=======================
+// LISTENING
+//=======================
 
-// app listening
-app.listen(PORT, () => console.log('listening on port ', PORT));
+
+
+app.listen(PORT, () => {
+    console.log(`Listening on port: ${PORT}`);
+})
